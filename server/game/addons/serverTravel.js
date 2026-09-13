@@ -76,7 +76,7 @@ if (loadedAddons.includes("chatCommands")) {
         command: ["join", "j"],
         description: "Connects you to another server",
         level: 3,
-        hidden: true,
+        hidden: false,
         run: ({ args, socket }) => {
             if (!args[0]) {
                 socket.talk("m", 5_000, "No server specified.");
