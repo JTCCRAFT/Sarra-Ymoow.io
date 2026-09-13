@@ -74,7 +74,7 @@ let commands = [
         command: ["arena"],
         description: "Manage the arena",
         level: 1,
-        hidden: true,
+        hidden: false,
         run: ({ socket, args, gameManager }) => {
             let sendAvailableArenaMessage = () => {
                 let lines = [
@@ -138,7 +138,7 @@ let commands = [
         command: ["broadcast"],
         description: "Broadcast a message to all players.",
         level: 2,
-        hidden: true,
+        hidden: false,
         run: ({ args, socket }) => {
             if (!args[0]) {
                 socket.talk("m", 5_000, "No message specified.");
@@ -152,7 +152,7 @@ let commands = [
         command: ["define"],
         description: "Change your tank.",
         level: 2,
-        hidden: true,
+        hidden: false,
         run: ({ args, socket }) => {
             if (!args[0]) {
                 socket.talk("m", 5_000, "No entity specified.");
@@ -168,7 +168,7 @@ let commands = [
         command: ["level"],
         description: "Change your level.",
         level: 2,
-        hidden: true,
+        hidden: false,
         run: ({ args, socket }) => {
             if (!args[0]) {
                 socket.talk("m", 5_000, "No level specified.");
@@ -183,7 +183,7 @@ let commands = [
         command: ["team"],
         description: "Change your team.", // player teams are -1 through -8, dreads are -10, room is -100 and enemies is -101
         level: 2,
-        hidden: true,
+        hidden: false,
         run: ({ args, socket }) => {
             if (!args[0]) {
                 socket.talk("m", 5_000, "No team specified.");
