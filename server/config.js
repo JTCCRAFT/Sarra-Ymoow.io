@@ -67,7 +67,7 @@ module.exports = {
             region: "Local",
             serverhost: "Local",
             location: "Localhost",
-            gamemode: ['arms_race', 'ffa'],
+            gamemode: ['arms_race', 'ffa', 'limbo', 'nexus'],
             player_cap: 80,
 
             featured: false,
@@ -162,6 +162,12 @@ module.exports = {
                         portal_properties: {
                             spawn_chance: 3, // chance for a portal to spawn somewhere in the map each loop iteration (higher = lower chances, lower = higher chance)
                             color: 'red', // portal color
+                        }
+                    },                    {
+                        ip: 'localhost:5050', // destination server host, don't add "https://" or any slashes to it
+                        portal_properties: {
+                            spawn_chance: 3, // chance for a portal to spawn somewhere in the map each loop iteration (higher = lower chances, lower = higher chance)
+                            color: 'orange', // portal color
                         }
                     }
                 ]
