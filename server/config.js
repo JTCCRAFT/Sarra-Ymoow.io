@@ -324,28 +324,28 @@ module.exports = {
                 // laby_${poly}_${tier}_${shiny}_${rank}
                 [
                     [24, `laby_${i + 3}_${j}_${k}_0`],
-                    //[1, `laby_${i + 3}_${j}_${k}_1`] // uncomment to enable crashers in nest
+                    [1, `laby_${i + 3}_${j}_${k}_1`] // uncomment to enable crashers in nest
                 ]
             ])
         ])
     ]),
 
     // Classic Food
-    classic_food: false, // Enables classic (Old Dreadnoughts) food types.
+    classic_food: true, // Enables classic (Old Dreadnoughts) food types.
     classic_food_types: [ // Possible classic food types outside the nest
         [1, [
-            [65, 'egg'], [64, 'triangle'], [45, 'square'], [7, 'pentagon']//, [1, 'hexagon']
+            [65, 'egg'], [64, 'triangle'], [45, 'square'], [7, 'pentagon'], [1, 'hexagon']
         ]],
         [1/50000, [
-            [625, 'gem'], [125, 'shinyTriangle'], [25, 'shinySquare'], [5, 'shinyPentagon']//, [1, 'shinyHexagon']
+            [625, 'gem'], [125, 'shinyTriangle'], [25, 'shinySquare'], [5, 'shinyPentagon'], [1, 'shinyHexagon']
         ]],
         [1/1000000, [
-            [1296, 'jewel'], [216, 'legendaryTriangle'], [36, 'legendarySquare'], [6, 'legendaryPentagon']//, [1, 'legendaryHexagon']
+            [1296, 'jewel'], [216, 'legendaryTriangle'], [36, 'legendarySquare'], [6, 'legendaryPentagon'], [1, 'legendaryHexagon']
         ]]
     ],
     classic_food_types_nest: [ // Possible classic food types in the nest
         [1, [
-            [16, 'pentagon'], [4, 'betaPentagon'], [1, 'alphaPentagon']/*, [16, 'presentRY'], [16, 'presentRP'], [16, 'presentRW'], [16, 'presentGY'], [16, 'presentGP'], [16, 'presentGW'], [16, 'presentBY'], [16, 'presentBP'], [16, 'presentBW'],*/
+            [16, 'pentagon'], [4, 'betaPentagon'], [1, 'alphaPentagon'], [16, 'presentRY'], [16, 'presentRP'], [16, 'presentRW'], [16, 'presentGY'], [16, 'presentGP'], [16, 'presentGW'], [16, 'presentBY'], [16, 'presentBP'], [16, 'presentBW'],
         ]]
     ],
     classic_enemy_types_nest: [ // Possible classic enemy food types in the nest
@@ -359,7 +359,7 @@ module.exports = {
 
     // Bosses
     enable_bosses: true,
-    boss_control: false, // Allows players to control bosses like dominators and motherships.
+    boss_control: true, // Allows players to control bosses like dominators and motherships.
     boss_spawn_cooldown: 260, // The delay (in seconds) between boss spawns.
     boss_spawn_delay: 6, // The delay (in seconds) between the boss spawn being announced and the boss(es) actually spawning.
     boss_types: [
