@@ -102,7 +102,7 @@ function init() {
             keys: [[["KEY_SPECIAL_PRESET_2", "2"]]],
             level: 1,
             operatorAccess: true,
-            hidden: true,
+            hidden: false,
             run: ({ socket, player }) => {
                 if (socket.permissions?.class) {
                     player.body.define({ RESET_UPGRADES: true, BATCH_UPGRADES: false });
@@ -125,7 +125,7 @@ function init() {
             description: "Defines you as healer",
             keys: [[["KEY_SPECIAL_PRESET_3", "3"]]],
             level: 1,
-            hidden: true,
+            hidden: false,
             run: ({ socket, player }) => {
                 if (socket.permissions?.class) {
                     player.body.define({ RESET_UPGRADES: true, BATCH_UPGRADES: false });
@@ -190,7 +190,7 @@ function init() {
             name: "Whirlpool",
             keys: [[["-KEY_SPECIAL_WHIRLPOOL", "W"]]],
             level: 1,
-            hidden: true,
+            hidden: false,
             run: ({ player }) => {
                 delete player.body.store.selectedWhirlpool;
             }
@@ -243,7 +243,7 @@ function init() {
         {
             name: "Drag",
             keys: [[["-KEY_SPECIAL_DRAG", "D"]]],
-            hidden: true,
+            hidden: false,
             level: 1,
             operatorAccess: true,
             run({ player }) {
@@ -984,7 +984,7 @@ function init() {
             keys: [[["default", "Unknown"]]],
             level: 1,
             operatorAccess: true,
-            hidden: true,
+            hidden: false,
             run: ({ socket }) => {
                 if (!socket.status.givenOperatorTips) {
                     socket.status.givenOperatorTips = true;
