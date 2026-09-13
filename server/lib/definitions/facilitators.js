@@ -1430,30 +1430,30 @@ exports.makeRare = (type, level) => {
     type = ensureIsClass(type);
     return {
         PARENT: "food",
-        LABEL: ["Shiny", "Legendary", "Shadow", "Rainbow", "Trans"][level] + " " + type.LABEL,
-        VALUE: [100, 500, 2000, 4000, 5000][level] * type.VALUE,
+        LABEL: ["Shiny", "Legendary", "Shadow", "Rainbow", "Trans", "Elepsy"][level] + " " + type.LABEL,
+        VALUE: [100, 500, 2000, 4000, 5000, 8000][level] * type.VALUE,
         SHAPE: type.SHAPE,
         SIZE: type.SIZE,
-        GLOW:  {
+        GLOW: {
             RADIUS: 2,
             STRENGTH: 25,
-            COLOR: ["lime", "teal", "darkGrey", "rainbow", "trans"][level],
+            COLOR: ["lime", "teal", "darkGrey", "rainbow", "trans", "elepsy"][level],
             ALPHA: 0.6
         },
-        COLOR: ["lime", "teal", "darkGrey", "rainbow", "trans"][level],
+        COLOR: ["lime", "teal", "darkGrey", "rainbow", "trans", "elepsy"][level],
         ALPHA: level == 2 ? 0.25 : 1,
         BODY: {
-            DAMAGE: [1, 1, 2, 2.5, 2.5][level] * type.BODY.DAMAGE,
-            DENSITY: [1, 1, 2, 2.5, 2.5][level] * type.BODY.DENSITY,
-            HEALTH: [2, 4, 4, 6, 8][level] * type.BODY.HEALTH,
-            PENETRATION: [1.5, 1.5, 2, 2.5, 2.5][level] * type.BODY.PENETRATION,
+            DAMAGE: [1, 1, 2, 2.5, 2.5, 3][level] * type.BODY.DAMAGE,
+            DENSITY: [1, 1, 2, 2.5, 2.5, 3][level] * type.BODY.DENSITY,
+            HEALTH: [2, 4, 4, 6, 8, 10][level] * type.BODY.HEALTH,
+            PENETRATION: [1.5, 1.5, 2, 2.5, 2.5, 3][level] * type.BODY.PENETRATION,
             ACCELERATION: type.BODY.ACCELERATION
         },
         DRAW_HEALTH: true,
         INTANGIBLE: type.INTANGIBLE,
         GIVE_KILL_MESSAGE: true,
-    }
-}
+    };
+};
 
 const labyTierToHealth = {
     0: 0.25,
@@ -1535,7 +1535,7 @@ exports.makeLaby = (type, tier, rarity, level, baseScale = 1) => {
 exports.makeRarities = (types = []) => {
     for (type of types) {
         const ct = type.charAt(0).toUpperCase() + type.slice(1);
-        const rarities = ["shiny", "legendary", "shadow", "rainbow", "trans"];
+        const rarities = ["shiny", "legendary", "shadow", "rainbow", "trans", "elepsy"];
         for (let i = 0; i < rarities.length; i++) {
             const pn = `${rarities[i]}${ct}`;
             Class[pn] = exports.makeRare(`${type}`, [i]);
